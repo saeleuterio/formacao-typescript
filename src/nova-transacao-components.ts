@@ -1,10 +1,3 @@
-let saldo = 3000;
-
-const elementoSaldo = document.querySelector(".saldo-valor .valor") as HTMLElement;
-if (elementoSaldo != null) {
-    elementoSaldo.textContent = saldo.toString();
-}
-
 const elementoFormulario = document.querySelector(".block-nova-transacao form") as HTMLFormElement;
 elementoFormulario.addEventListener("submit", function(event) {
     event.preventDefault();
@@ -29,10 +22,10 @@ elementoFormulario.addEventListener("submit", function(event) {
         alert("Tipo de Transação é inválido!");
         return;
     }
-
+    
     elementoSaldo.textContent = saldo.toString();
 
-    const novaTransacao = {
+    const novaTransacao: Transacao = {
         tipoTransacao: tipoTransacao,
         valor: valor,
         data: data
